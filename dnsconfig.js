@@ -1,7 +1,7 @@
-var REG_NAMECHEAP = NewRegistrar("namecheap");
-var DSP_NAMECHEAP = NewDnsProvider("namecheap");
+var REG_NONE = NewRegistrar("none");
+var DSP_CLOUDFLARE = NewDnsProvider("cloudflare");
 
-D("mihon.tools", REG_NAMECHEAP, DnsProvider(DSP_NAMECHEAP),
-  CNAME('backup', 'tachibk.netlify.app.'),
-  CNAME('local', 'mihonlocal.netlify.app.'),
+D("mihon.tools", REG_NONE, DnsProvider(DSP_CLOUDFLARE),
+  CNAME("backup", "tachibk.netlify.app.", CF_PROXY_ON),
+  CNAME("local", "mihonlocal.netlify.app.", CF_PROXY_ON),
 END)

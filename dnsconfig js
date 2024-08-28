@@ -1,7 +1,7 @@
-var REG_NONE = NewRegistrar('none', 'NONE');  // No registrar needed, as you're just managing DNS records
-var DNS_NAMECHEAP = NewDnsProvider('namecheap', 'NAMECHEAP');
+var REG_NAMECHEAP = NewRegistrar("namecheap");
+var DSP_NAMECHEAP = NewDnsProvider("namecheap");
 
-D('mihon.tools', REG_NONE, DnsProvider(DNS_NAMECHEAP),
-    CNAME('backup', 'tachibk.netlify.app.'),
-    CNAME('local', 'mihonlocal.netlify.app.')
-);
+D("mihon.tools", REG_NAMECHEAP, DnsProvider(DSP_NAMECHEAP),
+  CNAME('backup', 'tachibk.netlify.app.'),
+  CNAME('local', 'mihonlocal.netlify.app.'),
+END)
